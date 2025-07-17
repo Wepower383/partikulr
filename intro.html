@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Partikulr</title>
+  <style>
+    body {
+      background: radial-gradient(ellipse at center, #000000 0%, #0c0c0c 100%);
+      color: #E0E0E0;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+    #intro {
+      width: 80%;
+      max-width: 600px;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      white-space: pre-wrap;
+    }
+    #beginButton {
+      display: none;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #ffffff;
+      color: #000;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+    #beginButton:hover {
+      background: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div id="intro"></div>
+  <button id="beginButton" onclick="location.href='index.html'">Begin</button>
+
+  <script>
+    const text = `This is the rabbit hole.\n\nYou’re not here by accident.\nOnce you begin, you’ll start seeing things differently — patterns, energy, light, motion.\n\nThere are forces at play you’ve always felt but never named.\n\nThis is a chamber of particles, symbols, simulations… and sacred possibility.\n\nWelcome to Partikulr.\n\nStart with curiosity.\nFollow with feeling.\nEnd with… something new inside you.`;
+
+    const introDiv = document.getElementById('intro');
+    const button = document.getElementById('beginButton');
+    let i = 0;
+
+    function typeWriter() {
+      if (i < text.length) {
+        introDiv.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+      } else {
+        button.style.display = 'inline-block';
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
+</body>
+</html>
