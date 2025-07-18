@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Signal Received</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ffcc;
+      font-family: monospace;
+      text-align: center;
+      font-size: 1.4rem;
+      padding: 20vh 10vw;
+    }
+    .pulse {
+      animation: pulse 2s infinite;
+      color: white;
+      margin-top: 30px;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.2; }
+      50% { opacity: 1; }
+      100% { opacity: 0.2; }
+    }
+  </style>
+</head>
+<body>
+  <div id="signal">
+    <p>💠 Transmission received.</p>
+    <p>We’ve been waiting for someone like you.</p>
+    <p>Now the beacon is lit.</p>
+    <p class="pulse">▇▇▇▇▇</p>
+  </div>
+</body>
+</html>
