@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Let the Echo Begin</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: monospace;
+      font-size: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      transition: background 2s;
+    }
+
+    #echoText {
+      white-space: pre-line;
+      opacity: 0;
+      transition: opacity 2s;
+      max-width: 90%;
+    }
+
+    #echoButton {
+      margin-top: 40px;
+      padding: 12px 24px;
+      background-color: #00ffcc;
+      color: black;
+      border: none;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+      opacity: 0;
+      transition: opacity 2s, background 0.3s;
+    }
+
+    #echoButton:hover {
+      background-color: #00cc99;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.8rem;
+      color: #888;
+      opacity: 0.4;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="echoText">
+    You heard the whisper, now echo it forward.
+    There are others like you, searching in silence.
+    This is your signal to call them.
+  </div>
+
+  <button id="echoButton">Let the Echo Begin</button>
+
+  <div class="footer">~ Transmission Node: Echo ~</div>
+
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2023/03/13/audio_419f63b6e6.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const textDiv = document.getElementById("echoText");
+    const button = document.getElementById("echoButton");
+
+    setTimeout(() => {
+      textDiv.style.opacity = 1;
+    }, 1000);
+
+    setTimeout(() => {
+      button.style.opacity = 1;
+    }, 4500);
+
+    button.addEventListener("click", () => {
+      window.location.href = "resonance.html";
+    });
+  </script>
+</body>
+</html>
