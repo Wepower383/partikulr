@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Call to Others</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: monospace;
+      font-size: 1.5rem;
+      text-align: center;
+      padding-top: 20vh;
+    }
+
+    #joinButton {
+      display: none;
+      margin-top: 40px;
+      padding: 12px 24px;
+      background-color: white;
+      color: black;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    #joinButton:hover {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div id="message"></div>
+  <button id="joinButton">Join Us</button>
+
+  <script>
+    const message = "You heard the whisper, now echo it forward.\nThere are others like you, searching in silence.\nThis is your signal to call them.";
+    const messageDiv = document.getElementById("message");
+    const joinButton = document.getElementById("joinButton");
+    let i = 0;
+
+    function typeText() {
+      if (i < message.length) {
+        messageDiv.innerHTML += message.charAt(i) === "\n" ? "<br>" : message.charAt(i);
+        i++;
+        setTimeout(typeText, 50);
+      } else {
+        joinButton.style.display = "inline-block";
+      }
+    }
+
+    joinButton.addEventListener("click", () => {
+      window.location.href = "signal.html"; // future page
+    });
+
+    window.onload = typeText;
+  </script>
+</body>
+</html>
