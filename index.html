@@ -1,12 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Partikulr</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: black;
+      color: white;
+      font-family: monospace;
+    }
+
+    #message {
+      position: absolute;
+      top: 40%;
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+      font-size: 1.5rem;
+      animation: fadeIn 4s ease-in-out forwards;
+      animation-delay: 5s;
+    }
+
+    .choice-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out forwards;
+      animation-delay: 8s;
+    }
+
+    .choice-buttons button {
+      background: none;
+      border: 1px solid white;
+      color: white;
+      padding: 10px 20px;
+      margin: 0 15px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .choice-buttons button:hover {
+      background: white;
+      color: black;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
   <canvas id="particleCanvas"></canvas>
+
+  <div id="message">
+    Do you remember who you are?
+    <div class="choice-buttons">
+      <button onclick="window.location.href='yes.html'">Yes</button>
+      <button onclick="window.location.href='no.html'">No</button>
+    </div>
+  </div>
+
   <script src="main.js"></script>
 </body>
 </html>
