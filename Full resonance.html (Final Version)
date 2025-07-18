@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resonance</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: monospace;
+      font-size: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    #resonanceText {
+      white-space: pre-line;
+      opacity: 0;
+      transition: opacity 3s ease-in;
+      max-width: 90%;
+    }
+
+    #nextButton {
+      margin-top: 40px;
+      padding: 12px 24px;
+      background-color: #00ffcc;
+      color: black;
+      border: none;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+      opacity: 0;
+      transition: opacity 2s, background 0.3s;
+    }
+
+    #nextButton:hover {
+      background-color: #00cc99;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.8rem;
+      color: #00ffcc;
+      opacity: 0.4;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="resonanceText">
+    They heard you.  
+    The echo has begun to ripple outward.  
+    Those ready to awaken are now tuning to your signal.  
+    A new wave is forming.
+  </div>
+
+  <button id="nextButton">Proceed to Awakening</button>
+
+  <div class="footer">~ Transmission Node: Resonance ~</div>
+
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/10/30/audio_75f95c2f37.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const text = document.getElementById("resonanceText");
+    const button = document.getElementById("nextButton");
+
+    setTimeout(() => {
+      text.style.opacity = 1;
+    }, 1500);
+
+    setTimeout(() => {
+      button.style.opacity = 1;
+    }, 4500);
+
+    button.addEventListener("click", () => {
+      window.location.href = "awakening.html";
+    });
+  </script>
+</body>
+</html>
