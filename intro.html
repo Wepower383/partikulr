@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Partikulr Intro</title>
   <style>
     body {
@@ -34,8 +34,7 @@
   <button id="beginButton">Begin</button>
 
   <script>
-    const text = "This is the rabbit hole.\n\nYou're not here by accident.\nOnce you begin, you won't return the same.";
-
+    const text = `This is the rabbit hole.\n\nYou're not here by accident.\nOnce you begin, you won't return the same.`;
     const introDiv = document.getElementById('intro');
     const button = document.getElementById('beginButton');
     let i = 0;
@@ -44,14 +43,14 @@
       if (i < text.length) {
         introDiv.innerHTML += text.charAt(i);
         i++;
-        setTimeout(typeWriter, 40);
+        setTimeout(typeWriter, 60);
       } else {
         button.style.display = 'inline-block';
       }
     }
 
     button.addEventListener('click', () => {
-      window.location.href = 'index.html';
+      window.location.href = 'index.html'; // <-- the next file to load after "Begin"
     });
 
     window.onload = typeWriter;
